@@ -18,3 +18,14 @@ shop['другое количество проданных кг в среду'] 
 shop['другое количество проданных кг в четверг'] = inf[10]
 shop['другое количество проданных кг в пятницу'] = inf[11]
 print(shop)
+
+d = {
+    inf[0]: {inf[1]: 45, inf[2]: 991, inf[3]: 63, inf[4]: 100, inf[5]: 12},
+    inf[6]: {inf[7]: 13, inf[8]: 47, inf[9]: 26, inf[10]: 0, inf[11]: 16},
+}
+
+prodycti = dict()
+for name, sub_dict in d.items():
+    values = sub_dict.values()
+    prodycti[name] = sum(values) / len(values)
+print(prodycti)
