@@ -9,29 +9,42 @@
 #Минимальный элемент кратный 2:
 #Максимальный элемент кратный 5:
 
-f1 = open("file_1.txt", 'w')
-f1.write("2 ")
-f1.write("4 ")
-f1.write("6 ")
-f1.write("8 ")
+l = ['-20 -15 -10 -5 0 5 10 15 20 ']
+f1 = open('data_1.txt', 'w')
+f1.write('Элементы первого файла: ')
+f1.writelines(l)
 f1.close()
-f1 = open("file_1.txt")
+f1 = open("data_1.txt")
 print(f1.read())
 f1.close()
 
-f2 = open("file_2.txt", 'w')
-f2.write("11 ")
-f2.write("33 ")
-f2.write("55 ")
-f2.write("77 ")
-f2.write("99 ")
+l2 = ['-8 -6 -4 -2 0 2 4 6 8']
+f2 = open('data_2.txt', 'w')
+f2.write('Элементы второго файла: ')
+f2.writelines(l2)
 f2.close()
-f2 = open("file_2.txt")
+f2 = open("data_2.txt")
 print(f2.read())
 f2.close()
 
-print(f1)
-print(f2)
+f3 = open('data_3.txt', 'w')
+f3.write('Элементы первого и второго файлов: ')
+f3.writelines(l)
+f3.writelines(l2)
+f3.close()
+f3 = open("data_3.txt")
+print(f3.read())
+f3.close()
+
+
+lines = f3.readlines()
+lines.sort()
+f3.writelines(lines)
+
+
+
+
+
 
 
 
