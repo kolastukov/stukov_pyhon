@@ -25,15 +25,3 @@ def generator(text):
 start_generator = generator(text)
 for digit in start_generator:
     print(digit)
-
-
-
-
-
-
-
-
-
-
-
-
