@@ -9,6 +9,7 @@
 #Минимальный элемент кратный 2:
 #Максимальный элемент кратный 5:
 
+
 def rabota_s_failami():
 
     with open('file1.txt', 'w') as f1:
@@ -40,6 +41,7 @@ def rabota_s_failami():
         f.write(f"Количество элементов: {len(soidenenie)}\n")
         f.write(f"Минимальный элемент кратный 2: {dva}\n")
         f.write(f"Максимальный элемент кратный 5: {pat}\n")
+
 
 rabota_s_failami()
 
