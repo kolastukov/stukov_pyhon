@@ -9,37 +9,39 @@
 #Минимальный элемент кратный 2:
 #Максимальный элемент кратный 5:
 
-l = ['-20 -15 -10 -5 0 5 10 15 20 ']
-f1 = open('data_1.txt', 'w')
-f1.write('Элементы первого файла: ')
-f1.writelines(l)
-f1.close()
-f1 = open("data_1.txt")
-print(f1.read())
-f1.close()
+def rabota_s_failami():
 
-l2 = ['-8 -6 -4 -2 0 2 4 6 8']
-f2 = open('data_2.txt', 'w')
-f2.write('Элементы второго файла: ')
-f2.writelines(l2)
-f2.close()
-f2 = open("data_2.txt")
-print(f2.read())
-f2.close()
+    with open('file1.txt', 'w') as f1:
+        f1.write("-20 -15 -10 -5 0 5 10 15 20")
 
-f3 = open('data_3.txt', 'w')
-f3.write('Элементы первого и второго файлов: ')
-f3.writelines(l)
-f3.writelines(l2)
-f3.close()
-f3 = open("data_3.txt")
-print(f3.read())
-f3.close()
+    with open('file2.txt', 'w') as f2:
+        f2.write("-8 -6 -4 -2 0 2 4 6 8")
 
+    with open('file1.txt') as f1, open('file2.txt') as f2:
+        nums1 = list(map(int, f1.read().split()))
+        nums2 = list(map(int, f2.read().split()))
 
-lines = f3.readlines()
-lines.sort()
-f3.writelines(lines)
+    soidenenie = nums1 + nums2
+
+    sortiruem = sorted(soidenenie)
+
+    dva = min(x for x in soidenenie if x % 2 == 0)
+
+    pat = max(x for x in soidenenie if x % 5 == 0)
+
+    with open('vtoroi_fail.txt', 'w') as f:
+        f.write("Элементы находящийся в первом и втором файле:\n")
+        f.write(f"Элементы первого файла: {' '.join(map(str, nums1))}\n")
+        f.write(f"Элементы второго файла: {' '.join(map(str, nums2))}\n\n")
+
+        f.write("Все элементы после сортировки:\n")
+        f.write(f"{' '.join(map(str, sortiruem))}\n\n")
+
+        f.write(f"Количество элементов: {len(soidenenie)}\n")
+        f.write(f"Минимальный элемент кратный 2: {dva}\n")
+        f.write(f"Максимальный элемент кратный 5: {pat}\n")
+
+rabota_s_failami()
 
 
 
