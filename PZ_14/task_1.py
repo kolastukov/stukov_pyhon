@@ -8,7 +8,7 @@ def moi_file(filename):
     try:
         with open(filename, 'r', encoding='utf-8') as file:
             text = file.read()
-            pattern = r'(?:(роман|повесть|рассказ|поэма|пьеса|комедия|трагедия)\s*[«"](.+?)[»"]|«(.+?)»)'
+            pattern = r'(?:(повесть|поэма|пьеса|комедия|трагедия)\s*[«"](.+?)[»"]|«(.+?)»)'
             matches = re.findall(pattern, text)
 
             works = []
